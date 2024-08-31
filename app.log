@@ -1,0 +1,1 @@
+{"level":"info","timestamp":"2024-08-30T00:32:58+03:00","msg":"An unknown error occurred.","id":"1","name":"Alice","number":10,"message":"User founded","caller":"/Users/baran.atbas/Desktop/golang/flatbuffer-example/logger/logger.go:158 flatbuffer-example/logger.(*Logs).getStackTrace\n"}

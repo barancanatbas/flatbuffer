@@ -1,0 +1,40 @@
+namespace myapp;
+
+enum UserType: byte { Admin = 0, RegularUser = 1, Guest = 2 }
+
+struct Position {
+  latitude: float;
+  longitude: float;
+}
+
+table User {
+  id: int32;
+  name: string;
+  age: int64;
+  email: string;
+  is_active: bool = true;
+  user_type: UserType = RegularUser;
+  position: Position;
+  friends: [string];
+}
+
+table UserRequest {
+  id: int32;
+}
+
+table UserResponse {
+  user: User;
+  message: string;
+}
+
+table GetAllUsersRequest {}
+
+table UsersListResponse {
+  users: [User];
+  message: string;
+}
+
+rpc_service UserService {
+  GetUser(UserRequest): UserResponse;
+  GetAllUsers(GetAllUsersRequest): UsersListResponse;
+}

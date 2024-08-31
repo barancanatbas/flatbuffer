@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package myappProto;
+
+option go_package = "proto/myappProto";
+
+enum UserType {
+  ADMIN = 0;
+  REGULAR_USER = 1;
+  GUEST = 2;
+}
+
+message Position {
+  float latitude = 1;
+  float longitude = 2;
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  int64 age = 3;
+  string email = 4;
+  bool is_active = 5;
+  UserType user_type = 6;
+  Position position = 7;
+  repeated string friends = 8;
+}
+
